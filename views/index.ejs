@@ -1,11 +1,52 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+    <link rel='stylesheet' href='/stylesheets/bootstrap.min.css'/>
+    <link rel='stylesheet' href='/stylesheets/main.css'/>
+</head>
+<body>
+<h1 class='col-md-12'><%= title %></h1>
+<div class='col-md-12'>
+    <div class='panel panel-default'>
+
+        <div id="login" name="login">
+            <div class="container">
+                <div class="row white">
+                    <div class="col-md-6"><img class="img-responsive" src="/imgs/pc.jpg" align=""></div>
+                    <!--<form  role="form" action="/sms" method="post">-->
+                        <div class="col-md-6">
+                            <div class="col-lg-8 col-lg-offset-2 centered">
+                                <form id="loginform" class="form" role="form">
+                                    <div class="row">
+                                        <div class="col-xs-6 col-md-12 form-group">
+                                            <input class="form-control" id="phone" name="phone"
+                                                   placeholder="Phone Number"
+                                                   type="text"
+                                                   required/>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-6 col-md-12 form-group">
+                                            <input class="form-control" id="password" name="password"
+                                                   placeholder="Password"
+                                                   type="password"
+                                                   required/>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-6 col-md-12">
+                                            <button class="btn btn btn-lg">Login</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    <!--</form>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
 </html>
