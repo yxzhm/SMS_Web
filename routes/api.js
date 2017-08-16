@@ -130,6 +130,7 @@ var get_phone_by_uuid = function (uuid) {
     for (var i = 0; i < authList.length; i++) {
         var auth = authList[i];
         if (auth.uuid == uuid) {
+            auth.time=new Date();
             return auth.phone;
         }
     }
