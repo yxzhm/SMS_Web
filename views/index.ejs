@@ -1,12 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="indexApp">
 <head>
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css'/>
     <link rel='stylesheet' href='/stylesheets/bootstrap.min.css'/>
     <link rel='stylesheet' href='/stylesheets/main.css'/>
+    <script src="/javascripts/angular.min.js"></script>
+    <script src="/javascripts/angular-cookies.min.js"></script>
+    <script src="/javascripts/angular-route.js"></script>
+    <script src="/javascripts/app.js"></script>
 </head>
-<body>
+<body ng-controller="loginCtrl">
 <h1 class='col-md-12'><%= title %></h1>
 <div class='col-md-12'>
     <div class='panel panel-default'>
@@ -37,7 +41,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-xs-6 col-md-12">
-                                            <button class="btn btn btn-lg">Login</button>
+                                            <button class="btn btn btn-lg" ng-click="login()">Login</button>
                                         </div>
                                     </div>
                                 </form>
