@@ -34,6 +34,9 @@ sms_util.prototype.get_sms_by_phone = function (phone, event_flag) {
     var db = global.db;
     var sql = "select * from sms where phone=" + phone+" order by time";
     var smsList = new Array();
+    if(db==undefined)
+        return smsList;
+
     db.query(sql, function (err, rows) {
         for (var i = 0; i < rows.length; i++) {
             var sms = new sms_model();

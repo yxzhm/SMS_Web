@@ -3,12 +3,19 @@
  */
 var express = require('express');
 var router = express.Router();
+var utlity= require('./sms_util');
 /* GET users listing. */
 
-router.get('/sms', function (req, res, next) {
+router.get('/', function (req, res, next) {
     if(req.query!=undefined && req.query.uuid!=undefined) {
-        res.send(req.query.uuid);
-
+        var util = new utlity();
+        var phone = util.get_phone_by_uuid(req.query.uuid);
+        if(phone!=undefined) {
+            util.get_sms_by_phone(phone, "get_sms");
+            global.emitter.on("get_sms" + phone, function (smsList) {
+                res.render('sms', { smslist: smsList });
+            });
+        }
     }
 });
 

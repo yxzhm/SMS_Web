@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head >
+    <title>Tests</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/bootstrap.min.css' />
+</head>
+<body>
+
+<div id="myTabContent" class="tab-content">
+    <div class="tab-pane fade in active " id="status">
+        <div class="table-responsive">
+            <table class="table" width="100%">
+                <thead class="success">
+                <tr>
+                    <th width="1%">ID</th>
+                    <th width="10%">Contact</th>
+                    <th width="70%">Content</th>
+                    <th>Time</th>
+                </tr>
+                </thead>
+
+                <tbody align="left">
+
+
+                <% for (var i = 0; i < smslist.length; i++) { %>
+                <tr class="<%= i%2==0?'success':'info' %>">
+                    <td><%= i %></td>
+                    <td><%= smslist[i].contact_phone %></td>
+                    <td><%= smslist[i].content %></td>
+                    <td><%= smslist[i].time %></td>
+                </tr>
+                <% } %>
+                <!--<tr ng-repeat="s in statuslist" ng-class="$index %2 == 0?'success':'info'">-->
+                    <!--<td>{{s.index}}</td>-->
+                    <!--<td>{{s.cmd}}</td>-->
+                    <!--<td>{{s.status}}</td>-->
+                <!--</tr>-->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
